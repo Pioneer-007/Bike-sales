@@ -12,7 +12,7 @@
 
 
 
-### **Data Source**
+### **Data Sources**
 
 This primary dataset used for this analysis is the [bikes dataset](https://github.com/Pioneer-007/Bike-sales/blob/f9a67f0be53cf46282c680d75428b77c5c5fffb6/bikes.xlsx),it contains detailed information about the sales of bike of a company.
 
@@ -20,7 +20,7 @@ This primary dataset used for this analysis is the [bikes dataset](https://githu
 - Excel -Data Cleaning
   - [Download Here](https://microsoft.com)
 - Power BI -Data Visualization
-  -[Download Here](https://microsoft.com)
+  - [Download Here](https://microsoft.com)
 
   ### Data cleaning and preparation
   In the initial data preparation phrase ,we performed the following tasks:
@@ -42,5 +42,19 @@ This primary dataset used for this analysis is the [bikes dataset](https://githu
 
 
 ### Data Analysis
-```Excel
-[bikes dataset](https://github.com/Pioneer-007/Bike-sales/blob/f9a67f0be53cf46282c680d75428b77c5c5fffb6/bikes.xlsx)
+The data analysis was done using:
+1. Excel
+2. Power BI
+
+
+### Result and Findings.
+ There was a total of 1000 bikes purchased.The males especially adolescent purchased more bikes than females,the males were professional and skilled manual workers and have a commute distance of 0-1 miles with a bachaelors degree and followed by those with partial colleges.
+
+ ### Recommendations
+ The Bike sales should advertise more to adolescent males that are married and females that are single who are professional and skilled manual workers that have commute distances of 0-1 miles .
+
+ 😄
+ 
+ 🚴‍♂️
+ 
+ `thank_you`
