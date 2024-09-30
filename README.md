@@ -14,8 +14,8 @@
 
 ### **Data Source**
 
-This primary dataset used for this analysis is the "C:\Users\User\Downloads\bikes.xlsx",it contains detailed information about the sales of bike by a company.
+This primary dataset used for this analysis is the [bikes dataset]("C:\Users\User\Downloads\bikes.xlsx"),it contains detailed information about the sales of bike by a company.
 
 ### *Tools*
-- Excel-Data Cleaning
-- [Down Here]
+- Excel -Data Cleaning
+  - [Down Here](https://microsoft.com)
