@@ -45,6 +45,32 @@ This primary dataset used for this analysis is the [bikes dataset](https://githu
 The data analysis was done using:
 1. Excel
 2. Power BI
+3. SQL
+```SQL
+Select * from bike_buyers$ 
+
+with duplicate_CTE as (
+select ID,[Marital Status],Gender,Income,Children,Education,Occupation,[Home Owner],
+Cars,[Commute Distance],Region,Age,[Purchased Bike],row_number() over (partition by ID,[Marital Status],Gender,Income,Children,
+Education,Occupation,[Home Owner],Cars,[Commute Distance],Region,Age,[Purchased Bike] order by ID)AS DUPCOUNT FROM bike_buyers$
+)
+delete from duplicate_CTE WHERE DUPCOUNT > 1
+
+select COUNT(ID) AS Total_bikes from bike_buyers$
+
+select [Purchased Bike],SUM(CASE when Gender = 'M' THEN 1 else 0 end) as Males,SUM(CASE when Gender = 'F' THEN 1 else 0 end)AS
+Females from bike_buyers$ group by [Purchased Bike]
+
+select SUM(CASE when Occupation = 'Skilled Manual' THEN 1 else 0 end) as [skilled manual],SUM(CASE when Occupation = 'Professional' THEN 1 else 0 end)AS
+Professional,sum(CASE when Occupation='Clerical' then 1 else 0 end)as Clerical,sum(CASE WHEN Occupation='Manual' then 1 else 0 end)as Manual,
+sum(CASE when Occupation = 'Management' then 1 else 0 end)as management from bike_buyers$ 
+
+select [Purchased Bike],SUM(CASE when [Marital Status] = 'M' THEN 1 else 0 end) as Married,SUM(CASE when [Marital Status] = 'S' THEN 1 else 0 end)AS
+Single from bike_buyers$ group by [Purchased Bike]
+
+select SUM(CASE when Age < 30 THEN 1 else 0 end) as old ,SUM(CASE when Age between 30 and 45 THEN 1 else 0 end)AS Adult
+,sum(CASE when Age >45  then 1 else 0 end)as old from bike_buyers$ 
+```
 
 
 ### Result and Findings.
