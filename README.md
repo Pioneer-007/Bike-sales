@@ -68,7 +68,7 @@ sum(CASE when Occupation = 'Management' then 1 else 0 end)as management from bik
 select [Purchased Bike],SUM(CASE when [Marital Status] = 'M' THEN 1 else 0 end) as Married,SUM(CASE when [Marital Status] = 'S' THEN 1 else 0 end)AS
 Single from bike_buyers$ group by [Purchased Bike]
 
-select SUM(CASE when Age < 30 THEN 1 else 0 end) as old ,SUM(CASE when Age between 30 and 45 THEN 1 else 0 end)AS Adult
+select SUM(CASE when Age < 30 THEN 1 else 0 end) as young ,SUM(CASE when Age between 30 and 45 THEN 1 else 0 end)AS Adult
 ,sum(CASE when Age >45  then 1 else 0 end)as old from bike_buyers$ 
 ```
 
