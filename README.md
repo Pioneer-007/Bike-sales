@@ -56,27 +56,27 @@ Education,Occupation,[Home Owner],Cars,[Commute Distance],Region,Age,[Purchased 
 )
 delete from duplicate_CTE WHERE DUPCOUNT > 1
 
-1 select COUNT(ID) AS Total_bikes from bike_buyers$
+1. select COUNT(ID) AS Total_bikes from bike_buyers$
 
-2 select [Purchased Bike],SUM(CASE when Gender = 'M' THEN 1 else 0 end) as Males,SUM(CASE when Gender = 'F' THEN 1 else 0 end)AS
+2. select [Purchased Bike],SUM(CASE when Gender = 'M' THEN 1 else 0 end) as Males,SUM(CASE when Gender = 'F' THEN 1 else 0 end)AS
 Females from bike_buyers$ group by [Purchased Bike]
 
-3 select SUM(CASE when Occupation = 'Skilled Manual' THEN 1 else 0 end) as [skilled manual],SUM(CASE when Occupation = 'Professional' THEN 1 else 0 end)AS
+3. select SUM(CASE when Occupation = 'Skilled Manual' THEN 1 else 0 end) as [skilled manual],SUM(CASE when Occupation = 'Professional' THEN 1 else 0 end)AS
 Professional,sum(CASE when Occupation='Clerical' then 1 else 0 end)as Clerical,sum(CASE WHEN Occupation='Manual' then 1 else 0 end)as Manual,
 sum(CASE when Occupation = 'Management' then 1 else 0 end)as management from bike_buyers$ 
 
-4 select [Purchased Bike],SUM(CASE when [Marital Status] = 'M' THEN 1 else 0 end) as Married,SUM(CASE when [Marital Status] = 'S' THEN 1 else 0 end)AS
+4. select [Purchased Bike],SUM(CASE when [Marital Status] = 'M' THEN 1 else 0 end) as Married,SUM(CASE when [Marital Status] = 'S' THEN 1 else 0 end)AS
 Single from bike_buyers$ group by [Purchased Bike]
 
-5 select SUM(CASE when Age < 30 THEN 1 else 0 end) as young ,SUM(CASE when Age between 30 and 45 THEN 1 else 0 end)AS Adult
-,sum(CASE when Age >45  then 1 else 0 end)as old from bike_buyers$
+5. select SUM(CASE when Age < 30 THEN 1 else 0 end) as young ,SUM(CASE when Age between 30 and 45 THEN 1 else 0 end)AS Adult,sum(CASE when Age >45
+ then 1 else 0 end)as old from bike_buyers$
 
- 6 select [Purchased Bike],SUM(CASE when [Commute Distance] = '0-1 Miles' THEN 1 else 0 end) AS [0-1 Miles],SUM(CASE when [Commute Distance] = '1-2 Miles' THEN 1 else 0 end)AS [1-2 Miles], Sum(CASE when [Commute Distance]= '2-5 Miles' then 1 else 0 end) as [2-5 Miles], SUM(CASE when [Commute Distance] = '5-10 Miles' then 1 else 0 end)
+6. select [Purchased Bike],SUM(CASE when [Commute Distance] = '0-1 Miles' THEN 1 else 0 end) AS [0-1 Miles],SUM(CASE when [Commute Distance] = '1-2 Miles' THEN 1 else 0 end)AS [1-2 Miles], Sum(CASE when [Commute Distance]= '2-5 Miles' then 1 else 0 end) as [2-5 Miles], SUM(CASE when [Commute Distance] = '5-10 Miles' then 1 else 0 end)
  As [5-10 Miles], SUM(CASE when [Commute Distance]='10+ Miles' then 1 else 0 end) as [10+ Miles] from bike_buyers$ group by [Purchased Bike]
   
- 7 select Education,sum(Income) as income from bike_buyers$ Group by Education order by income
+7. select Education,sum(Income) as income from bike_buyers$ Group by Education order by income
 
- 8  select [Purchased Bike],[Marital Status],sum(CASE WHEN Region = 'Europe' then 1 else 0 end) as europe , sum(CASE WHEN Region = 'Pacific' then 1 else 0 end) as 
+8.  select [Purchased Bike],[Marital Status],sum(CASE WHEN Region = 'Europe' then 1 else 0 end) as europe , sum(CASE WHEN Region = 'Pacific' then 1 else 0 end) as 
   Pacific, sum(CASE when Region = 'North America' then 1 else 0 end ) as [North America]from bike_buyers$ group by [Purchased Bike],[Marital Status]
 
 ```
